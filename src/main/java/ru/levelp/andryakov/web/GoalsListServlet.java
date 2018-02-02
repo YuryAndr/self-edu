@@ -33,17 +33,20 @@ public class GoalsListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         goalsDAO.addGoal("Stop visit this page " + count++, 100, user);
         List<Goal> goals = goalsDAO.listGoals(user);
-        response.getWriter().append( "<html>\n" +
+        StringBuilder sb = new StringBuilder();
+        sb.append( "<html>\n" +
                                         "<body>\n");
         for (Goal goal:goals) {
-            response.getWriter().append("<h2>" + goal.getTitle() + "</h2>\n");
+            sb.append("<h2>" + goal.getTitle() + "</h2>\n");
         }
 
-        response.getWriter().append("</body>\n" +
+        sb.append("</body>\n" +
                                     "</html>");
+
+        response.getWriter().append(sb);
+
     }
 
     @Override
