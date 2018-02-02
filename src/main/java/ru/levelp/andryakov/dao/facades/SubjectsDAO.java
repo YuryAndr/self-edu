@@ -13,7 +13,7 @@ public class SubjectsDAO {
         this.em = em;
     }
 
-    public void addSubject (String title) {
+    public Subject addSubject (String title) {
         Subject subject = new Subject();
         subject.setTitle(title);
 
@@ -22,6 +22,7 @@ public class SubjectsDAO {
         } catch (Throwable t) {
             System.out.println("Error while adding subject\n\t" + t.getStackTrace());
         }
+        return subject;
     }
 
     public List<Subject> listSubjects () {

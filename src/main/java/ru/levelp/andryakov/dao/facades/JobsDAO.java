@@ -14,7 +14,7 @@ public class JobsDAO {
         this.em = em;
     }
 
-    public void addJob(String title, String description, int gain) {
+    public Job addJob(String title, String description, int gain) {
         Job job = new Job();
         job.setTitle(title);
         job.setGain(gain);
@@ -26,6 +26,7 @@ public class JobsDAO {
         } catch (Throwable t) {
             System.out.println("Error while adding job\n\t" + t.getStackTrace());
         }
+        return job;
     }
 
     public void finishJob(Job job) {

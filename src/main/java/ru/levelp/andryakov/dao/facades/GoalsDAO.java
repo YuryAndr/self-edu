@@ -17,12 +17,12 @@ public class GoalsDAO {
         this.em = em;
     }
 
-    public void addGoal(String title, int finalProgress, User user) {
-        addGoal(title, finalProgress, user, null);
+    public Goal  addGoal(String title, int finalProgress, User user) {
+        return addGoal(title, finalProgress, user, null);
 
     }
 
-    public void addGoal(String title, int finalProgress, User user, Subject subject) {
+    public Goal addGoal(String title, int finalProgress, User user, Subject subject) {
         Goal goal = new Goal();
         goal.setUser(user);
         goal.setTitle(title);
@@ -33,6 +33,7 @@ public class GoalsDAO {
         } catch (Throwable t) {
             System.out.println("Error while adding goal\n\t" + t.getStackTrace());
         }
+        return goal;
     }
 
     public List<Goal> listGoals(User user) {

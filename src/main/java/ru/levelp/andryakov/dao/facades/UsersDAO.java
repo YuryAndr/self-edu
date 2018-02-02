@@ -14,7 +14,7 @@ public class UsersDAO {
         this.em = em;
     }
 
-    public void addUser (String login, String password) {
+    public User addUser (String login, String password) {
         User user = new User();
         user.setLogin(login);
         user.setPassword(password);
@@ -24,6 +24,7 @@ public class UsersDAO {
         } catch (Throwable t) {
             System.out.println("Error while adding user\n\t" + t.getStackTrace());
         }
+        return user;
     }
 
     public List<User> listUsers() {
