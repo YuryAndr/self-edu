@@ -7,6 +7,8 @@ import ru.levelp.andryakov.dao.facades.GoalsDAO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,21 +34,23 @@ public class GoalsListServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         goalsDAO.addGoal("Stop visit this page " + count++, 100, user);
         List<Goal> goals = goalsDAO.listGoals(user);
-        StringBuilder sb = new StringBuilder();
-        sb.append( "<html>\n" +
-                                        "<body>\n");
-        for (Goal goal:goals) {
-            sb.append("<h2>" + goal.getTitle() + "</h2>\n");
-        }
+//        StringBuilder sb = new StringBuilder();
+//        sb.append( "<html>\n" +
+//                                        "<body>\n");
+//        for (Goal goal:goals) {
+//            sb.append("<h2>" + goal.getTitle() + "</h2>\n");
+//        }
+//
+//        sb.append("</body>\n" +
+//                                    "</html>");
+//        response.getWriter().append(sb);
+        request.setAttribute("goals", goals);
 
-        sb.append("</body>\n" +
-                                    "</html>");
-
-        response.getWriter().append(sb);
-
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/list_of_goals.jsp");
+        rd.forward(request, response);
     }
 
     @Override
