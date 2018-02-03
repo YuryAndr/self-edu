@@ -1,8 +1,5 @@
-package ru.levelp.andryakov.dao.facades;
+package ru.levelp.andryakov.selfedu.dao;
 
-import ru.levelp.andryakov.dao.entities.Subject;
-
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;

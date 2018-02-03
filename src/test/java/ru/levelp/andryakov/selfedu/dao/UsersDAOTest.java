@@ -1,10 +1,9 @@
-package ru.levelp.andryakov.dao.facades;
+package ru.levelp.andryakov.selfedu.dao;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.levelp.andryakov.dao.entities.Subject;
-import ru.levelp.andryakov.dao.entities.User;
+import ru.levelp.andryakov.selfedu.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,18 +12,18 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class SubjectsDAOTest {
+public class UsersDAOTest {
 
     EntityManagerFactory factory;
     EntityManager em;
-    SubjectsDAO subjectsDAO;
+    UsersDAO usersDAO;
 
 
     @Before
     public void setup() {
         factory = Persistence.createEntityManagerFactory("TestPersistenceUnit");
         em = factory.createEntityManager();
-        subjectsDAO = new SubjectsDAO(em);
+        usersDAO = new UsersDAO(em);
     }
 
     @After
@@ -33,12 +32,11 @@ public class SubjectsDAOTest {
         factory.close();
     }
 
-
     @Test
-    public void whenSubjectAddedThenListSubjectsReturnsSubject() throws Exception {
-        subjectsDAO.addSubject("test");
-        List<Subject> subjects = subjectsDAO.listSubjects();
-        String title = subjects.get(0).getTitle();
-        assertEquals(title, "test");
+    public void whenUserAddedThenListUsersReturnsUser() throws Exception {
+        usersDAO.addUser("test","test");
+        List<User> users = usersDAO.listUsers();
+        String login = users.get(0).getLogin();
+        assertEquals(login, "test");
     }
 }

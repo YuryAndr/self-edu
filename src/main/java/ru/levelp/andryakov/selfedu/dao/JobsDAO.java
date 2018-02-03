@@ -1,10 +1,14 @@
-package ru.levelp.andryakov.dao.facades;
+package ru.levelp.andryakov.selfedu.dao;
 
-import ru.levelp.andryakov.dao.entities.*;
+import ru.levelp.andryakov.selfedu.model.Goal;
+import ru.levelp.andryakov.selfedu.model.Job;
+import ru.levelp.andryakov.selfedu.model.Subject;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+
+//TODO: mark find as nullable
 
 public class JobsDAO {
 

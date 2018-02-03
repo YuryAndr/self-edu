@@ -1,9 +1,9 @@
-package ru.levelp.andryakov.web;
+package ru.levelp.andryakov.selfedu.web;
 
-import ru.levelp.andryakov.dao.entities.Goal;
-import ru.levelp.andryakov.dao.entities.User;
-import ru.levelp.andryakov.dao.facades.GoalsDAO;
-import ru.levelp.andryakov.dao.facades.UsersDAO;
+import ru.levelp.andryakov.selfedu.model.Goal;
+import ru.levelp.andryakov.selfedu.model.User;
+import ru.levelp.andryakov.selfedu.dao.GoalsDAO;
+import ru.levelp.andryakov.selfedu.dao.UsersDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GoalsListServlet extends HttpServlet {

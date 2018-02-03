@@ -1,4 +1,4 @@
-package ru.levelp.andryakov.dao.entities;
+package ru.levelp.andryakov.selfedu.model;
 
 import javax.persistence.*;
 import java.util.List;

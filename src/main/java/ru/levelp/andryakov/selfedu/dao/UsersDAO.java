@@ -1,7 +1,6 @@
-package ru.levelp.andryakov.dao.facades;
+package ru.levelp.andryakov.selfedu.dao;
 
-import ru.levelp.andryakov.dao.entities.Subject;
-import ru.levelp.andryakov.dao.entities.User;
+import ru.levelp.andryakov.selfedu.model.User;
 
 import javax.persistence.*;
 import java.util.List;

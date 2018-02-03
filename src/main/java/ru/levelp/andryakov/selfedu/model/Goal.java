@@ -1,8 +1,9 @@
-package ru.levelp.andryakov.dao.entities;
+package ru.levelp.andryakov.selfedu.model;
 
 import javax.persistence.*;
 import java.util.List;
-
+//TODO : mark nullable
+//
 @Entity
 @Table(name = "goals")
 public class Goal {

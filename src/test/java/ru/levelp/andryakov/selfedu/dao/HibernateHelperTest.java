@@ -1,13 +1,12 @@
-package ru.levelp.andryakov.dao.facades;
+package ru.levelp.andryakov.selfedu.dao;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.levelp.andryakov.dao.entities.User;
+import ru.levelp.andryakov.selfedu.model.User;
 
 import javax.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
