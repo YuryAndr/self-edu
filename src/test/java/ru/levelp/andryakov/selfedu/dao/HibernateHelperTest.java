@@ -3,7 +3,7 @@ package ru.levelp.andryakov.selfedu.dao;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.levelp.andryakov.selfedu.model.User;
+import ru.levelp.andryakov.selfedu.common.model.User;
 
 import javax.persistence.*;
 

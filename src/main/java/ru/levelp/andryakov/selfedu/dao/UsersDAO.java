@@ -1,6 +1,6 @@
 package ru.levelp.andryakov.selfedu.dao;
 
-import ru.levelp.andryakov.selfedu.model.User;
+import ru.levelp.andryakov.selfedu.common.model.User;
 
 import javax.persistence.*;
 import java.util.List;

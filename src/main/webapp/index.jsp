@@ -2,14 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix ="c" %>
 <!DOCTYPE HTML>
 <html>
-
+<head>
+<title>Index</title>
+</head>
 <body>
-<h1>Goals</h1>
-<jsp:useBean id="bean" class="ru.levelp.andryakov.selfedu.beans.SubjectsBean" scope="application" />
-
-	<c:forEach items="${bean.subjects}" var="subject">
-		<p>"${subject.title}"</p>
-	</c:forEach>
-
+    <h1>Welcome to Self-Edu web-app</h1>
 </body>
 </html>

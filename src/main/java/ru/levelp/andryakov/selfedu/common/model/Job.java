@@ -1,4 +1,4 @@
-package ru.levelp.andryakov.selfedu.model;
+package ru.levelp.andryakov.selfedu.common.model;
 
 import javax.persistence.*;
 import java.util.Date;

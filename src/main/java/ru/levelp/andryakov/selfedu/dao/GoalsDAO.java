@@ -1,8 +1,8 @@
 package ru.levelp.andryakov.selfedu.dao;
 
-import ru.levelp.andryakov.selfedu.model.Goal;
-import ru.levelp.andryakov.selfedu.model.Subject;
-import ru.levelp.andryakov.selfedu.model.User;
+import ru.levelp.andryakov.selfedu.common.model.Goal;
+import ru.levelp.andryakov.selfedu.common.model.Subject;
+import ru.levelp.andryakov.selfedu.common.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

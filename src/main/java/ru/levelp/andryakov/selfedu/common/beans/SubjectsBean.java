@@ -1,9 +1,7 @@
-package ru.levelp.andryakov.selfedu.beans;
+package ru.levelp.andryakov.selfedu.common.beans;
 
-import ru.levelp.andryakov.selfedu.dao.GoalsDAO;
 import ru.levelp.andryakov.selfedu.dao.SubjectsDAO;
-import ru.levelp.andryakov.selfedu.model.Goal;
-import ru.levelp.andryakov.selfedu.model.Subject;
+import ru.levelp.andryakov.selfedu.common.model.Subject;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

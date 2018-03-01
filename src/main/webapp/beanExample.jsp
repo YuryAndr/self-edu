@@ -4,15 +4,12 @@
 <html>
 
 <body>
+<h1>Goals</h1>
+<jsp:useBean id="bean" class="ru.levelp.andryakov.selfedu.beans.SubjectsBean" scope="application" />
 
-<table>
-
-	<c:forEach items="${goals}" var="goal">
-		<tr>
-			<td><c:out value="${goal.title}"></c:out></td>
-		</tr>
+	<c:forEach items="${bean.subjects}" var="subject">
+		<p>"${subject.title}"</p>
 	</c:forEach>
-</table>
 
 </body>
 </html>
