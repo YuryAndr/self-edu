@@ -1,4 +1,4 @@
-package ru.levelp.andryakov.selfedu.common.beans;
+package ru.levelp.andryakov.selfedu.common.bean;
 
 import ru.levelp.andryakov.selfedu.dao.SubjectsDAO;
 import ru.levelp.andryakov.selfedu.common.model.Subject;

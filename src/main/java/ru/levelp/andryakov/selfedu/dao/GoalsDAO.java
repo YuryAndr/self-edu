@@ -1,5 +1,6 @@
 package ru.levelp.andryakov.selfedu.dao;
 
+import org.springframework.stereotype.Repository;
 import ru.levelp.andryakov.selfedu.common.model.Goal;
 import ru.levelp.andryakov.selfedu.common.model.Subject;
 import ru.levelp.andryakov.selfedu.common.model.User;
@@ -8,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@Repository
 public class GoalsDAO {
 
     private final EntityManager em;
@@ -26,12 +28,16 @@ public class GoalsDAO {
         goal.setUser(user);
         goal.setTitle(title);
         goal.setSubject(subject);
+        return addGoal(goal);
+    }
 
+    public Goal addGoal(Goal goal) {
         try {
             HibernateHelper.persistInstance(goal, em);
         } catch (Throwable t) {
             System.out.println("Error while adding goal\n\t" + t.getStackTrace());
         }
+
         return goal;
     }
 

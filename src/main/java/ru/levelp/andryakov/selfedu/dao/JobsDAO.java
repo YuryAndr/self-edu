@@ -1,5 +1,6 @@
 package ru.levelp.andryakov.selfedu.dao;
 
+import org.springframework.stereotype.Repository;
 import ru.levelp.andryakov.selfedu.common.model.Goal;
 import ru.levelp.andryakov.selfedu.common.model.Job;
 import ru.levelp.andryakov.selfedu.common.model.Subject;
@@ -10,6 +11,7 @@ import java.util.List;
 
 //TODO: mark find as nullable
 
+@Repository
 public class JobsDAO {
 
     private final EntityManager em;
