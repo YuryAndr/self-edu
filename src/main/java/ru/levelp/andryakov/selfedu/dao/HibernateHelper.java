@@ -5,9 +5,9 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import java.util.List;
 
-class HibernateHelper {
+public class HibernateHelper {
 
-    static <E> void persistInstance (E e, EntityManager em) throws Throwable {
+    public static <E> void persistInstance (E e, EntityManager em) throws Throwable {
         try {
             em.getTransaction().begin();
             em.persist(e);
@@ -18,7 +18,7 @@ class HibernateHelper {
         }
     }
 
-    static <E> List<E> selectFullIstancesList (String query, EntityManager em) {
+    public static <E> List<E> selectFullIstancesList (String query, EntityManager em) {
         try {
             return (List<E>) em.createQuery(query)
                     .getResultList();

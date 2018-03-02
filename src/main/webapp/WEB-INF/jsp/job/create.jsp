@@ -4,27 +4,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Create goal</title>
+<title>Create job</title>
 </head>
 <body>
-<h1>Create new goal</h1>
-<form:form modelAttribute = "goalBean">
+<h1>Create new job</h1>
+<form:form modelAttribute = "jobBean">
     <table>
         <tr>
             <td>Title :</td>
             <td><form:input path="title"/></td>
         </tr>
         <tr>
-            <td>Final progress:</td>
-            <td><form:input path="finalProgress"/></td>
+            <td>Gain:</td>
+            <td><form:input path="gain"/></td>
         </tr>
         <tr>
             <td>
-                <input type="submit" value="Create Goal"/>
+                <input type="submit" value="Create Job"/>
             </td>
         </tr>
     </table>
 </form:form>
-<a href="<c:url value="/goal/list"/>">Go Back</a>
+<a href="<c:url value="/job/list"/>">Go Back</a>
 </body>
 </html>

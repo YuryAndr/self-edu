@@ -1,10 +1,12 @@
 package ru.levelp.andryakov.selfedu.dao;
 
+import org.springframework.stereotype.Repository;
 import ru.levelp.andryakov.selfedu.common.model.User;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Repository
 public class UsersDAO {
 
     private final EntityManager em;
@@ -28,5 +30,15 @@ public class UsersDAO {
 
     public List<User> listUsers() {
         return HibernateHelper.selectFullIstancesList("select u from User u",em);
+    }
+
+    public User getUser(String login) {
+        try {
+            return (User) em.createQuery("select u from User u where u.login = :login")
+                    .setParameter("login", login)
+                    .getSingleResult();
+        } catch (NoResultException notFound) {
+            return null;
+        }
     }
 }

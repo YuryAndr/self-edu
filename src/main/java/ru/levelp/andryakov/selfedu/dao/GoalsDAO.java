@@ -61,4 +61,14 @@ public class GoalsDAO {
             return null;
         }
     }
+
+    public Goal getGoal(int id) {
+        try {
+            return (Goal) em.createQuery("select g from Goal g where g.goalId = :id")
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } catch (NoResultException notFound) {
+            return null;
+        }
+    }
 }

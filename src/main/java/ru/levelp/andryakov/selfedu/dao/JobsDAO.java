@@ -26,13 +26,7 @@ public class JobsDAO {
         job.setGain(gain);
         job.setStartDate(new Date());
         job.setDescription(description);
-
-        try {
-            HibernateHelper.persistInstance(job, em);
-        } catch (Throwable t) {
-            System.out.println("Error while adding job\n\t" + t.getStackTrace());
-        }
-        return job;
+        return addJob(job);
     }
 
     public void finishJob(Job job) {
@@ -44,9 +38,9 @@ public class JobsDAO {
         }
     }
 
-    public List<Subject> listJobs (Goal goal) {
+    public List<Job> listJobs (Goal goal) {
         try {
-            return (List<Subject>) em.createQuery("select j from Jobs j where j.goal = :goal")
+            return (List<Job>) em.createQuery("select j from Job j where j.goal = :goal")
                     .setParameter("goal", goal)
                     .getResultList();
         } catch (NoResultException notFound) {
@@ -54,4 +48,12 @@ public class JobsDAO {
         }
     }
 
+    public Job addJob(Job job) {
+        try {
+            HibernateHelper.persistInstance(job, em);
+        } catch (Throwable t) {
+            System.out.println("Error while adding job\n\t" + t.getStackTrace());
+        }
+        return job;
+    }
 }

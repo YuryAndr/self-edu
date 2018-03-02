@@ -10,6 +10,8 @@ import ru.levelp.andryakov.selfedu.common.bean.GoalBean;
 import ru.levelp.andryakov.selfedu.common.model.Goal;
 import ru.levelp.andryakov.selfedu.service.GoalsService;
 
+import java.util.List;
+
 @RequestMapping(value = "/goal")
 @Controller
 public class GoalsController {
@@ -28,10 +30,16 @@ public class GoalsController {
 
     @PostMapping(value = "/create")
     public String postCreateGoal(@ModelAttribute GoalBean goalBean) {
-        Goal goal = new Goal();
-        goal.setTitle(goalBean.getTitle());
-        goal.setFinalProgress(goalBean.getFinalProgress());
-        goalsService.addGoal(goal);
-        return "goal/create";
+        //TODO: убрать костыль после изучения регистрации и аутентификации
+        goalsService.addGoal(goalBean, "admin");
+        return "redirect:/goal/list";
+    }
+
+    @GetMapping(value = "/list")
+    public String getListGoals(Model model) {
+        //TODO: убрать костыль после изучения регистрации и аутентификации
+        List<GoalBean> goalBeans = goalsService.listGoals("admin");
+        model.addAttribute("goalBeans", goalBeans);
+        return "goal/list";
     }
 }

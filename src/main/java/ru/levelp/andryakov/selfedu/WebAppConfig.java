@@ -5,6 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import ru.levelp.andryakov.selfedu.common.model.User;
+import ru.levelp.andryakov.selfedu.dao.HibernateHelper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,7 +24,18 @@ public class WebAppConfig {
 
     @Bean
     public EntityManager getEntityManager(EntityManagerFactory factory) {
-        return factory.createEntityManager();
+        EntityManager em = factory.createEntityManager();
+
+        //TODO: убрать костыль после изучения регистрации и аутентификации
+        User user = new User();
+        user.setLogin("admin");
+        user.setPassword("password");
+        try {
+            HibernateHelper.persistInstance(user, em);
+        } catch (Throwable t) {
+            System.out.println("Error while adding user\n\t" + t.getStackTrace());
+        }
+        return em;
     }
 
     @Bean

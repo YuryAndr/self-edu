@@ -70,4 +70,8 @@ public class Goal {
     public void setJobs(List<Job> jobs) {
         this.jobs = jobs;
     }
+
+    public int getGoalId() {
+        return goalId;
+    }
 }

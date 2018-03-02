@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>Welcome to Self-Edu web-app</h1>
+    <a href="<c:url value="/goal/list"/>">List Goals</a>
 </body>
 </html>

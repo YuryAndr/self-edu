@@ -1,9 +1,22 @@
 package ru.levelp.andryakov.selfedu.common.bean;
 
 public class GoalBean {
+    private int id;
     private String title;
     private int finalProgress;
     private int currentProgress;
+
+    public GoalBean() {
+        this.finalProgress = 100;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getCurrentProgress() {
         return currentProgress;
